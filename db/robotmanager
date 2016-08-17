@@ -1,6 +1,7 @@
 ---
 robots:
-- name: dave
+- id: 717d07cb-3089-4b8e-8923-e776e54b69fa
+  name: frank
   avatar: 
   city: 
   state: 
