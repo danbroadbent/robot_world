@@ -1,10 +1,4 @@
 ---
-robots:
-- id: 45401b3e-af66-40e2-9835-53281c82f808
-  name: dave
-  avatar: dave
-  city: denver
-  state: 
-  department: 
-  birthday: 
-  hire_day: 
+robots: []
+tasks: []
+total: 0

@@ -28,13 +28,13 @@ class RobotManager
     end
   end
 
-  def raw_robot(id)
-    raw_robots.find do |robot| robot['id'] == id
+  def raw_robot(name)
+    raw_robots.find do |robot| robot['name'] == name
     end
   end
 
-  def find(id)
-    Robot.new(raw_robot(id))
+  def find(name)
+    Robot.new(raw_robot(name))
   end
 
   def update(id, robot_data)
@@ -47,6 +47,12 @@ class RobotManager
   def destroy(id)
     database.transaction do
       database['robots'].delete_if { |robot| robot['id'] == id }
+    end
+  end
+
+  def destroy_all
+    database.transaction do
+      database['robots'] = []
     end
   end
 end
