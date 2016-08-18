@@ -1,7 +1,20 @@
 <h1>Create a new robot</h1>
 
 <form action="/robots" method="post">
-  <p>name</p>
+  <h3>Name</h3>
   <input type="text" name="robot[name]">
+  <!-- <h3>Avatar</h3>
+  <input type="file" name="robot[avatar]" accept="image/*"> -->
+  <h3>Department</h3>
+  <input type="text" name="robot[department]" maxlength="40">
+  <h3>City</h3>
+  <input type="text" name="robot[city]" maxlength="40">
+  <h3>State</h3>
+  <input type="text" name="robot[state]" maxlength="2">
+  <h3>Birthday</h3>
+  <input type="date" name="robot[birthday]">
+  <h3>Hire Day</h3>
+  <input type="date" name="robot[hire_day]">
   <input type="submit">
+
 </form>

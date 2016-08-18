@@ -11,7 +11,7 @@ class Robot
   def initialize(data)
     @id         = data['id']
     @name       = data['name']
-    @avatar     = data['avatar']
+    @avatar     = data['name']
     @city       = data['city']
     @state      = data['state']
     @birthday   = data['birthday']

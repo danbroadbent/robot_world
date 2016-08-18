@@ -1,10 +1,18 @@
 ---
 robots:
-- id: 717d07cb-3089-4b8e-8923-e776e54b69fa
-  name: frank
-  avatar: 
-  city: 
-  state: 
-  department: 
-  birthday: 
-  hire_day: 
+- id: 4fb82a12-14f7-421a-ac07-48a2176bd865
+  name: Dan
+  avatar: Dan
+  city: Denver
+  state: CO
+  department: HR
+  birthday: '2013-08-09'
+  hire_day: '2015-03-05'
+- id: dc615998-9c62-4171-9f42-7b502e2b17c1
+  name: r2d2
+  avatar: r2d2
+  city: Madison
+  state: WI
+  department: Janitorial
+  birthday: '1977-09-09'
+  hire_day: '2013-05-06'

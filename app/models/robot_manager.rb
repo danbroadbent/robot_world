@@ -24,7 +24,7 @@ class RobotManager
   def create(robot)
     database.transaction do
       database['robots'] ||= []
-      database['robots'] << { "id" => SecureRandom.uuid, "name" => robot[:name], "avatar" => robot[:avatar], "city" => robot[:city], "state" => robot[:state], "department" => robot[:department], "birthday" => robot[:birthday], "hire_day" => robot[:hire_day]}
+      database['robots'] << { "id" => SecureRandom.uuid, "name" => robot[:name], "avatar" => robot[:name], "city" => robot[:city], "state" => robot[:state], "department" => robot[:department], "birthday" => robot[:birthday], "hire_day" => robot[:hire_day]}
     end
   end
 

@@ -1,5 +1,22 @@
-<h1> All Robots </h1>
+<h1 class="text-center"> All Robots </h1>
 
 <% @robots.each do |robot| %>
-<h1> <a href="robots/<%= robot.id %>"><%= robot.name %></a> </h1>
+<!-- <div class="row">
+  <div class="small-3 columns"><a href="robots/<%= robot.id %>"><img src="https://robohash.org/<%= robot.id %>.png"></a></div>
+  <div class="small-9 columns"><h2> <a href="robots/<%= robot.id %>"><%= robot.name %></a> </h2></div>
+</div> -->
+
+<div class="row">
+  <div class="small-3 columns">
+    <a href="robots/<%= robot.id %>"><img src="https://robohash.org/<%= robot.id %>.png"></a>
+    <h2> <a href="robots/<%= robot.id %>"><%= robot.name %></a> </h2></div>
+  <div class="small-9 columns">
+    <h2>Department: <%= robot.department %> </h2>
+    <h2>City: <%= robot.city %> </h2>
+    <h2>State: <%= robot.state %> </h2>
+    <h2>DOB: <%= robot.birthday %> </h2>
+    <h2>Hire Day: <%= robot.hire_day %> </h2>
+  </div>
+</div>
+
 <% end %>

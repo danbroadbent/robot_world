@@ -1,11 +1,25 @@
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-  </head>
+<!doctype html>
+<html class="no-js" lang="en" dir="ltr">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="/css/foundation.css">
+  <link rel="stylesheet" href="/css/application.css">
+</head>
 <body>
-</nav>
-<div class="container">
-  <%= yield %>
+  <div class="top-bar">
+  <div class="top-bar-left">
+    <ul class="dropdown menu" data-dropdown-menu>
+      <li class="menu-text">Robot World</li>
+      <li><a href="/">Dashboard</a></li>
+      <li><a href="/robots">All Robots</a></li>
+      <li><a href="/robots/new">Create a Robot</a></li>
+    </ul>
+  </div>
 </div>
+  <div class="container">
+    <%= yield %>
+  </div>
 </body>
 </html>

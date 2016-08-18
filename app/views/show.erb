@@ -1,7 +1,30 @@
-<h1><%= @robot.name %> </h1>
+<div class="row">
+  <div class="small-3 columns"><a href="/robot/<%= @robot.id %>/edit" class="button">Edit this Robot</a></div>
+  <div class="small-9 columns">
+    <form action="/robots/<%= @robot.id %>" method="post">
+    <input type="hidden" name="_method" value="delete" />
+    <input class="alert button" type="submit" value="Delete this Robot" />
+  </form>
+</div>
+</div>
+
+<div class="row">
+  <div class="small-3 columns"><h1><%= @robot.name %> </h1><img src="https://robohash.org/<%= @robot.id %>.png"></div>
+  <div class="small-9 columns">
+    <h1>Department: <%= @robot.department %> </h1>
+    <h1>City: <%= @robot.city %> </h1>
+    <h1>State: <%= @robot.state %> </h1>
+    <h1>DOB: <%= @robot.birthday %> </h1>
+    <h1>Hire Day: <%= @robot.hire_day %> </h1>
+  </div>
+</div>
+
+
+
+<!-- 
 <a href="/robot/<%= @robot.id %>/edit">Edit</a>
 
 <form action="/robots/<%= @robot.id %>" method="post">
   <input type="hidden" name="_method" value="delete" />
   <input class="btn btn-danger" type="submit" value="Delete!!!" />
-</form>
+</form> -->
