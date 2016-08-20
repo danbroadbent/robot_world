@@ -41,7 +41,12 @@ class RobotWorldApp < Sinatra::Base
   end
 
   def robot_manager
-      database = YAML::Store.new('db/robotmanager')
-      @robot_manager ||= RobotManager.new(database)
+    if ENV['RACK_ENV'] == "test"
+      database = SQLite3::Database.new('db/robot_world_test.db')
+    else
+      database = SQLite3::Database.new('db/robot_world_development.db')
+    end
+    database.results_as_hash = true
+    RobotManager.new(database)
     end
 end
