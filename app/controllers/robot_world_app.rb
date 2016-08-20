@@ -1,3 +1,5 @@
+require_relative '../models/robot_manager'
+
 class RobotWorldApp < Sinatra::Base
   set :root, File.expand_path("..", __dir__)
   set :method_override, true
@@ -47,6 +49,6 @@ class RobotWorldApp < Sinatra::Base
       database = SQLite3::Database.new('db/robot_world_development.db')
     end
     database.results_as_hash = true
-    RobotManager.new(database)
-    end
+    @robot_manager ||= RobotManager.new(database)
+  end
 end
