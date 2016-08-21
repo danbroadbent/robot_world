@@ -9,7 +9,8 @@ class RobotManagerTest < Minitest::Test
 
   def create_robot
     robot_manager.create({
-      :name => "dave"
+      :name => "dave",
+      :birthday => "01-01-2000"
       })
     robot = robot_manager.find(current_robot_id)
   end
@@ -48,5 +49,7 @@ class RobotManagerTest < Minitest::Test
     robot = robot_manager.find(current_robot_id)
     assert_equal "chewbacca", robot.name
   end
+
+
 
 end
