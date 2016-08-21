@@ -1,4 +1,5 @@
 require_relative 'robot'
+require_relative 'robot_stats'
 
 class RobotManager
   attr_reader :database
@@ -44,4 +45,18 @@ class RobotManager
   def destroy_all
     database.execute("DELETE FROM robots")
   end
+
+  def average_robot_age
+    total_ages = all.reduce(0) { |sum, robot| sum += robot.age }
+    total_ages / all.count
+  end
+
+  def robots_hired_per_year
+    first_robot_hired = all.min_by { |robot| robot.hire_day }
+    hiring_years = Time.now.utc.to_date.year - first_robot_hired.hire_year
+    all.count.to_f / hiring_years.to_f
+  end
+
+
+
 end

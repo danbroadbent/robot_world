@@ -6,7 +6,27 @@ class RobotTest < Minitest::Test
       "name" => "dave",
       "city" => "denver"
       })
-    assert_equal "dave", robot.name
-    assert_equal "denver", robot.city
+      assert_equal "dave", robot.name
+      assert_equal "denver", robot.city
+  end
+
+  def test_it_calculates_robot_age
+    robot = Robot.new({
+      "name" => "dave",
+      "city" => "denver",
+      "birthday" => "2000-01-01",
+      "hire_day" => "2006-01-01"
+      })
+    assert_equal 16, robot.age
+  end
+
+  def test_it_calculates_robot_years_worked
+    robot = Robot.new({
+      "name" => "dave",
+      "city" => "denver",
+      "birthday" => "2000-01-01",
+      "hire_day" => "2006-01-01"
+      })
+    assert_equal 10, robot.years_worked
   end
 end

@@ -10,7 +10,8 @@ class RobotManagerTest < Minitest::Test
   def create_robot
     robot_manager.create({
       :name => "dave",
-      :birthday => "01-01-2000"
+      :birthday => "2000-01-01",
+      :hire_day => "2006-01-01"
       })
     robot = robot_manager.find(current_robot_id)
   end
@@ -50,6 +51,21 @@ class RobotManagerTest < Minitest::Test
     assert_equal "chewbacca", robot.name
   end
 
+  def test_it_counts_robots
+    2.times { create_robot }
+    assert_equal 2, number_of_robots
+  end
 
+  def test_it_calulates_avg_robot_age
+    2.times { create_robot }
+    average_robot_age = robot_manager.average_robot_age
+    assert_equal 16, average_robot_age
+  end
+
+  def test_it_calculates_robots_hired_per_year
+    2.times { create_robot }
+    robots_hired_per_year = robot_manager.robots_hired_per_year
+    assert_equal 0.2, robots_hired_per_year
+  end
 
 end
